@@ -11,8 +11,15 @@ function Callback() {
 
   useEffect(() => {
     const finish = async () => {
-      await supabase.auth.getSession();
-      navigate({ to: "/dashboard" });
+      const {
+        data: { user },
+      } = await supabase.auth.getUser();
+
+      if (user?.email === "namaste@sarlayash.com") {
+        navigate({ to: "/admin" });
+      } else {
+        navigate({ to: "/dashboard" });
+      }
     };
 
     finish();
