@@ -2,7 +2,6 @@ import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
-import { lovable } from "@/integrations/lovable/index";
 import { supabase } from "@/integrations/supabase/client";
 
 export const Route = createFileRoute("/auth")({
@@ -35,17 +34,22 @@ function AuthPage() {
   }, [navigate]);
 
   const handleGoogle = async () => {
-    setBusy(true);
-    const result = await lovable.auth.signInWithOAuth("google", {
-      redirect_uri: window.location.origin,
+  setBusy(true);
+
+  const { error } = await supabase.auth.signInWithOAuth({
+    provider: "google",
+    options: {
+      redirectTo: `${window.location.origin}/auth/callback`,
+    },
+  });
+
+  if (error) {
+    setBusy(false);
+    toast.error("Sign-in failed", {
+      description: error.message,
     });
-    if (result.error) {
-      setBusy(false);
-      toast.error("Sign-in failed", { description: result.error.message });
-      return;
-    }
-    // On redirected: browser navigates. On popup success: onAuthStateChange fires.
-  };
+  }
+};
 
   return (
     <div className="grid min-h-screen bg-background md:grid-cols-2">
