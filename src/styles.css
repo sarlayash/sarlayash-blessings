@@ -1,0 +1,162 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * SarlaYash Blessings — Fortune 500 design system.
+ * Palette: ink black, warm gold, ivory white.
+ * Type: Playfair Display for headlines, Inter for UI.
+ */
+
+@theme inline {
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, serif;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-gold: var(--gold);
+  --color-gold-foreground: var(--gold-foreground);
+  --color-ink: var(--ink);
+  --color-ivory: var(--ivory);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.5rem;
+
+  /* Palette */
+  --ink: oklch(0.15 0.005 264);
+  --ivory: oklch(0.985 0.004 90);
+  --gold: oklch(0.76 0.11 82);
+  --gold-foreground: oklch(0.18 0.01 264);
+
+  --background: var(--ivory);
+  --foreground: var(--ink);
+
+  --card: oklch(1 0 0);
+  --card-foreground: var(--ink);
+
+  --popover: oklch(1 0 0);
+  --popover-foreground: var(--ink);
+
+  --primary: var(--ink);
+  --primary-foreground: var(--ivory);
+
+  --secondary: oklch(0.96 0.005 90);
+  --secondary-foreground: var(--ink);
+
+  --muted: oklch(0.955 0.005 90);
+  --muted-foreground: oklch(0.48 0.01 264);
+
+  --accent: var(--gold);
+  --accent-foreground: var(--gold-foreground);
+
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.985 0.004 90);
+
+  --border: oklch(0.9 0.008 90);
+  --input: oklch(0.9 0.008 90);
+  --ring: var(--gold);
+
+  --chart-1: var(--gold);
+  --chart-2: oklch(0.4 0.01 264);
+  --chart-3: oklch(0.65 0.09 82);
+  --chart-4: oklch(0.55 0.02 264);
+  --chart-5: oklch(0.82 0.06 82);
+
+  --sidebar: oklch(0.14 0.005 264);
+  --sidebar-foreground: oklch(0.85 0.005 90);
+  --sidebar-primary: var(--gold);
+  --sidebar-primary-foreground: var(--ink);
+  --sidebar-accent: oklch(0.2 0.005 264);
+  --sidebar-accent-foreground: var(--ivory);
+  --sidebar-border: oklch(0.22 0.005 264);
+  --sidebar-ring: var(--gold);
+}
+
+.dark {
+  --background: var(--ink);
+  --foreground: var(--ivory);
+  --card: oklch(0.19 0.005 264);
+  --card-foreground: var(--ivory);
+  --popover: oklch(0.19 0.005 264);
+  --popover-foreground: var(--ivory);
+  --primary: var(--gold);
+  --primary-foreground: var(--ink);
+  --secondary: oklch(0.22 0.005 264);
+  --secondary-foreground: var(--ivory);
+  --muted: oklch(0.22 0.005 264);
+  --muted-foreground: oklch(0.7 0.01 264);
+  --accent: var(--gold);
+  --accent-foreground: var(--ink);
+  --border: oklch(0.25 0.005 264);
+  --input: oklch(0.25 0.005 264);
+  --ring: var(--gold);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+  h1, h2, h3, .font-serif {
+    font-family: var(--font-serif);
+    letter-spacing: -0.01em;
+  }
+}
+
+@utility gold-rule {
+  position: relative;
+}
+@utility gold-underline {
+  background-image: linear-gradient(90deg, transparent, var(--gold), transparent);
+  height: 1px;
+  width: 100%;
+}

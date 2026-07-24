@@ -1,0 +1,81 @@
+{
+  "meta": {
+    "generatedFor": "QA demo dataset",
+    "note": "This is a compact JSON sample matching the SQL seed file."
+  },
+  "applicants": [
+    {"id":"11111111-1111-4111-8111-111111111111","email":"ava.patel@example.com","full_name":"Ava Patel","track":"backend-ops"},
+    {"id":"22222222-2222-4222-8222-222222222222","email":"liam.nguyen@example.com","full_name":"Liam Nguyen","track":"product-analytics"},
+    {"id":"33333333-3333-4333-8333-333333333333","email":"sophia.chen@example.com","full_name":"Sophia Chen","track":"cloud-platforms"},
+    {"id":"44444444-4444-4444-8444-444444444444","email":"noah.brown@example.com","full_name":"Noah Brown","track":"backend-ops"},
+    {"id":"55555555-5555-4555-8555-555555555555","email":"mia.lopez@example.com","full_name":"Mia Lopez","track":"product-analytics"}
+  ],
+  "applications": [
+    {"id":"40111111-1111-4111-8111-111111111111","user_id":"11111111-1111-4111-8111-111111111111","track":"backend-ops","status":"accepted","pipeline_stage":"selected"},
+    {"id":"40122222-2222-4222-8222-222222222222","user_id":"22222222-2222-4222-8222-222222222222","track":"product-analytics","status":"under_review","pipeline_stage":"under_review"},
+    {"id":"40133333-3333-4333-8333-333333333333","user_id":"33333333-3333-4333-8333-333333333333","track":"cloud-platforms","status":"submitted","pipeline_stage":"assessment_completed"},
+    {"id":"40144444-4444-4444-8444-444444444444","user_id":"44444444-4444-4444-8444-444444444444","track":"backend-ops","status":"draft","pipeline_stage":"applied"},
+    {"id":"40155555-5555-4555-8555-555555555555","user_id":"55555555-5555-4555-8555-555555555555","track":"product-analytics","status":"accepted","pipeline_stage":"offer_released"}
+  ],
+  "assessments": [
+    {"id":"50111111-1111-4111-8111-111111111111","title":"Foundations of Backend Engineering","track":"backend-ops","status":"published"},
+    {"id":"50122222-2222-4222-8222-222222222222","title":"Product Analytics Essentials","track":"product-analytics","status":"published"},
+    {"id":"50133333-3333-4333-8333-333333333333","title":"Cloud Platform Foundations","track":"cloud-platforms","status":"published"}
+  ],
+  "assessment_questions": [
+    {"id":"60111111-1111-4111-8111-111111111111","assessment_id":"50111111-1111-4111-8111-111111111111","type":"mcq","prompt":"Which HTTP method is best for creating a new resource?"},
+    {"id":"60122222-2222-4222-8222-222222222221","assessment_id":"50122222-2222-4222-8222-222222222222","type":"mcq","prompt":"Which metric best measures user retention?"},
+    {"id":"60133333-3333-4333-8333-333333333331","assessment_id":"50133333-3333-4333-8333-333333333333","type":"mcq","prompt":"Which service is commonly used to host containers?"}
+  ],
+  "assessment_attempts": [
+    {"id":"70111111-1111-4111-8111-111111111111","user_id":"11111111-1111-4111-8111-111111111111","assessment_id":"50111111-1111-4111-8111-111111111111","passed":true,"percentage":80},
+    {"id":"70111111-1111-4111-8111-111111111112","user_id":"22222222-2222-4222-8222-222222222222","assessment_id":"50122222-2222-4222-8222-222222222222","passed":true,"percentage":70},
+    {"id":"70111111-1111-4111-8111-111111111113","user_id":"33333333-3333-4333-8333-333333333333","assessment_id":"50133333-3333-4333-8333-333333333333","passed":false,"percentage":60}
+  ],
+  "projects": [
+    {"id":"80111111-1111-4111-8111-111111111111","user_id":"11111111-1111-4111-8111-111111111111","title":"API Reliability Dashboard","status":"completed","score":95},
+    {"id":"80122222-2222-4222-8222-222222222222","user_id":"22222222-2222-4222-8222-222222222222","title":"Growth Funnel Analysis","status":"reviewed","score":88},
+    {"id":"80133333-3333-4333-8333-333333333333","user_id":"33333333-3333-4333-8333-333333333333","title":"Cloud Deploy Starter","status":"submitted","score":null}
+  ],
+  "certificates": [
+    {"id":"90111111-1111-4111-8111-111111111111","user_id":"11111111-1111-4111-8111-111111111111","certificate_number":"CERT-2026-001","verification_code":"SYB-2026-0001"},
+    {"id":"90122222-2222-4222-8222-222222222222","user_id":"22222222-2222-4222-8222-222222222222","certificate_number":"CERT-2026-002","verification_code":"SYB-2026-0002"},
+    {"id":"90133333-3333-4333-8333-333333333333","user_id":"33333333-3333-4333-8333-333333333333","certificate_number":"CERT-2026-003","verification_code":"SYB-2026-0003"}
+  ],
+  "notifications": [
+    {"id":"10011111-1111-4111-8111-111111111111","user_id":"11111111-1111-4111-8111-111111111111","title":"Application accepted","category":"application"},
+    {"id":"10022222-2222-4222-8222-222222222222","user_id":"22222222-2222-4222-8222-222222222222","title":"Assessment reminder","category":"assessment"},
+    {"id":"10033333-3333-4333-8333-333333333333","user_id":"33333333-3333-4333-8333-333333333333","title":"Project review requested","category":"project"}
+  ],
+  "interviews": [
+    {"id":"11011111-1111-4111-8111-111111111111","application_id":"40122222-2222-4222-8222-222222222222","applicant_id":"22222222-2222-4222-8222-222222222222","status":"scheduled"},
+    {"id":"11022222-2222-4222-8222-222222222222","application_id":"40155555-5555-4555-8555-555555555555","applicant_id":"55555555-5555-4555-8555-555555555555","status":"completed"}
+  ],
+  "offers": [
+    {"id":"12011111-1111-4111-8111-111111111111","application_id":"40111111-1111-4111-8111-111111111111","applicant_id":"11111111-1111-4111-8111-111111111111","offer_number":"OFF-001","status":"accepted"},
+    {"id":"12022222-2222-4222-8222-222222222222","application_id":"40155555-5555-4555-8555-555555555555","applicant_id":"55555555-5555-4555-8555-555555555555","offer_number":"OFF-002","status":"sent"}
+  ],
+  "tracks": [
+    {"id":"20111111-1111-4111-8111-111111111111","slug":"backend-ops","name":"Backend Operations"},
+    {"id":"20122222-2222-4222-8222-222222222222","slug":"product-analytics","name":"Product Analytics"},
+    {"id":"20133333-3333-4333-8333-333333333333","slug":"cloud-platforms","name":"Cloud Platforms"}
+  ],
+  "cohorts": [
+    {"id":"30111111-1111-4111-8111-111111111111","name":"Summer 2026 Cohort","code":"SUM26","track_id":"20111111-1111-4111-8111-111111111111"},
+    {"id":"30122222-2222-4222-8222-222222222222","name":"Autumn 2026 Cohort","code":"AUT26","track_id":"20122222-2222-4222-8222-222222222222"}
+  ],
+  "counts": {
+    "applicants": 20,
+    "applications": 10,
+    "assessments": 5,
+    "assessment_questions": 50,
+    "assessment_attempts": 25,
+    "projects": 15,
+    "certificates": 10,
+    "notifications": 20,
+    "interviews": 5,
+    "offers": 5,
+    "tracks": 3,
+    "cohorts": 2
+  }
+}
